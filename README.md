@@ -13,7 +13,7 @@ The following is a description of the YEnc algorithm. It is a very simple proced
 
 ### Encoding
 
-The following describes how each character is encoded. All characters are shifted by 42 modulo 256. This is to avoid needed to escape long chains of NULL or 0 characters, which are common. If after shifting we end up with one of the critical characters, we escape it with an = and shift the ordinal of the character by an additional 64. Hence the name *Yenc* as in *Wh**Y** **Enc**ode?* 
+The following describes how each character is encoded. All characters are shifted by 42 modulo 256. This is to avoid escaping frequently encountered lengthy chains of NULL or 0 characters. If after shifting we end up with one of the 5 critical characters (NULL, 9, 10, 13, or the escape character "="), we escape it with an = and shift the ordinal of the character by an additional 64. Hence the name *Yenc* as in *Wh**Y** **Enc**ode?* 
 
 ```
 FOR EACH byte IN byte-array:
