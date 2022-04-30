@@ -37,7 +37,7 @@ FOR EACH char in character-array:
         DEFAULT:
             IF critical_flag THEN
                 SET critical_flag FALSE
-                output x - 64 - 42 MOD 256 (or - 106), and continue
+                output x - 64 - 42 (or - 106) MOD 256, and continue
             ELSE
                 output x - 42 MOD 256, and continue
 ```
