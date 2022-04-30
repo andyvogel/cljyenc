@@ -49,14 +49,14 @@ with each char in character-array:
 
 ### Related Java Caveats
 
-In Java byte is signed, so we must must promote and convert bytes to unsigned integers
-with the static method Byte.toUnsignedInt() to coerce the right numbers out of 
+In Java `byte` is signed, so we must must promote and convert `byte`s to unsigned `int`s
+with the static method `Byte.toUnsignedInt()` to coerce the right numbers out of 
 the computations. To change the integer back we use the instance method of 
-integer, .byteValue() which returns the unsigned integer to a signed version.
+`Integer`, `.byteValue()` which returns the unsigned integer to a signed version.
 
 ### Known Flaws and Limitations
 
-The library does not detect the =yend. This doesn't matter; removing the 
+The library does not detect the `=yend`. This doesn't matter; removing the 
 last bytes of the decode works. The epilogue code looks like its detecting 
 the header instead. None of this impacts the basic function of encoding
 and decoding YEnc.
@@ -66,6 +66,5 @@ and decoding YEnc.
 Copyright © 2022 Andy Vogel
 
 This program is released under the MIT License. It is free software. This software is 
-distributed as-is with no warranty. See LICENSE
-for more details.
+distributed as-is with no warranty. See LICENSE for more details.
 
