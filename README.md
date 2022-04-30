@@ -56,10 +56,8 @@ the computations. To change the integer back we use the instance method of
 
 ### Known Flaws and Limitations
 
-The library does not detect the `=yend`. This doesn't matter; removing the 
-last bytes of the decode works. The epilogue code looks like its detecting 
-the header instead. None of this impacts the basic function of encoding
-and decoding YEnc.
+The algorithm is a first iteration, and could use some optimizations and improved input
+validation.
 
 ## License
 
