@@ -5,7 +5,7 @@ text encoded in YEnc. The libraries name is pronouned (See-El-Jenk)
 
 ## Usage
 
-The niche use of Yenc
+The niche use of YEnc
 is to encode binary data into strings that won't confuse text based
 protocols of network applications.This library takes bytes and encodes them into a string using YEnc. My own usage is to encode bytes into String and back, since the built in Java character
 encodings aren't able to consistently and accurately reproduce byte
@@ -33,7 +33,7 @@ with each byte in byte-array:
         default: output x
 ```
 
-### Decode
+### Decoding
 
 To decode text into binary you do the following.
 
@@ -42,9 +42,12 @@ with each char in character-array:
     let x = ordinal value of char
     let read-next-as-critical-flag = false
     switch on x:
-        case read-next-as-critical-flag: output x - 64 - 42 (or - 106)
-        case 61: read next character as critical (set read-next-as-critical-flag to true)
-        default: output x - 42
+        case read-next-as-critical-flag: 
+            set read-next-as-critical-flag to false
+            output x - 64 - 42 (or - 106), and continue
+        case 61: 
+            read next character as critical (set read-next-as-critical-flag to true), and continue
+        default: output x - 42, and continue
 ```
 
 ### Related Java Caveats
