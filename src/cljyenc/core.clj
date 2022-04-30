@@ -27,7 +27,7 @@
          verify-header-mode false]
     (cond (empty? residue) nil
           verify-header-mode (let [possible-header (apply str (take 6 residue))]
-                               (if (= possible-header "ybegin")
+                               (if (= possible-header "end")
                                  true (drop 6 residue)))
           (= (first residue) \=) (recur (rest residue) true))))
 
